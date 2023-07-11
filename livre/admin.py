@@ -12,6 +12,5 @@ class LivreAdmin(admin.ModelAdmin):
         'auteur',
 
     )
-    list_per_page = 2
 
-    ordering = ['-titre']
+    ordering = ['titre']

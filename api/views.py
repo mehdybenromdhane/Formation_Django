@@ -29,7 +29,6 @@ def updateBook(request, id=None):
     serializer = LivreSerializer(instance=livre, data=request.data)
     if serializer.is_valid():
         serializer.save()
-
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -39,4 +38,4 @@ def deleteBook(request, id=None):
     livre = Livre.objects.get(id=id)
 
     livre.delete()
-    return Response(" book deleted")
+    return Response("book deleted")
